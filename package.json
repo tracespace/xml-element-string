@@ -1,0 +1,39 @@
+{
+  "name": "xml-element-string",
+  "version": "0.0.0",
+  "description": "Takes a tag-name, attributes object, and an array of children and turns them into an xml string",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint *.js",
+    "test": "istanbul cover _mocha",
+    "posttest": "npm run lint",
+    "test:watch": "mocha --reporter dot --watch",
+    "test:browser": "zuul --local -- test.js",
+    "test:sauce": "zuul -- test.js",
+    "ci": "npm test && if [ \"${TEST_BROWSERS}\" = \"true\" ]; then npm run ci:browser; fi",
+    "ci:browser": "if [ \"${TRAVIS_PULL_REQUEST}\" = \"false\" ]; then npm run test:sauce; fi",
+    "postci": "coveralls < ./coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracespace/xml-element-string.git"
+  },
+  "keywords": [
+    "xml",
+    "svg"
+  ],
+  "author": "Mike Cousins <mike@cousins.io> (http://cousins.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tracespace/xml-element-string/issues"
+  },
+  "homepage": "https://github.com/tracespace/xml-element-string#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.12.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.3",
+    "zuul": "^3.10.1"
+  }
+}
