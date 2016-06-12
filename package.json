@@ -1,6 +1,6 @@
 {
   "name": "xml-element-string",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Takes a tag-name, attributes object, and an array of children and turns them into an xml string",
   "main": "index.js",
   "scripts": {
